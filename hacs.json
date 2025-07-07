@@ -1,0 +1,10 @@
+{
+  "name": "Visalia Energy",
+  "domain": "visalia_energy",
+  "author": "peraulet",
+  "documentation": "https://github.com/peraulet/Visalia_Integration",
+  "codeowners": ["@peraulet"],
+  "requirements": [],
+  "version": "1.0.0",
+  "iot_class": "cloud_polling"
+}
