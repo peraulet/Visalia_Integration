@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Visalia Energy - Integración para Home Assistant
 
 Esta integración personalizada permite conectar Home Assistant con la comercializadora eléctrica **Visalia**, accediendo a tus facturas y creando sensores útiles.
@@ -35,3 +36,7 @@ Desarrollado por [tu nombre].
 ## 🪪 Licencia
 
 MIT
+=======
+# Visalia_Integration
+Visalia Integration for Home Assistant
+>>>>>>> 88fbec9df5bc2d1feb6a89c53d225e2df73e1b74
