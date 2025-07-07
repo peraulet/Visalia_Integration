@@ -30,7 +30,7 @@ Consulta más en: [https://clientes.visalia.com.es](https://clientes.visalia.com
 
 ## 🧑‍💻 Créditos
 
-Desarrollado por [tu nombre].
+Desarrollado por danielperaulet@gmail.com
 
 ## 🪪 Licencia
 
