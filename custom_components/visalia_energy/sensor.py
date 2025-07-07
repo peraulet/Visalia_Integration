@@ -1,7 +1,9 @@
+# -----------------------------
+# custom_components/visalia_energy/sensor.py
+# -----------------------------
 from datetime import timedelta
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, CoordinatorEntity
-from homeassistant.helpers.entity import Entity
 from .const import DOMAIN, SCAN_INTERVAL_MINUTES
 from .api import VisaliaAPI
 
@@ -42,6 +44,7 @@ class VisaliaSensor(CoordinatorEntity, SensorEntity):
         self._attr_name = name
         self._state = value
         self._attr_unit_of_measurement = unit
+        self._attr_unique_id = f"visalia_{name.replace(' ', '_').lower()}"
 
     @property
     def state(self):
@@ -50,4 +53,3 @@ class VisaliaSensor(CoordinatorEntity, SensorEntity):
     async def async_update(self):
         await self.coordinator.async_request_refresh()
         invoices = self.coordinator.data
-        # No cambio de estado aquí para mantenerlo simple
