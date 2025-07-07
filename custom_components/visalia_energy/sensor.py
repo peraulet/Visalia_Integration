@@ -32,7 +32,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
     invoices = coordinator.data
     last = invoices["results"][0] if invoices["results"] else {}
     values = [float(f["total"]) for f in invoices["results"] if f.get("total")]
-    avg = sum(values) / len(values) if values else 0
+    avg = round(sum(values) / len(values), 2) if values else 0
 
     sensors = [
         VisaliaSensor(coordinator, "Última factura", last.get("total"), "€"),
