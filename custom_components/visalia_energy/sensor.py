@@ -2,10 +2,13 @@
 # custom_components/visalia_energy/sensor.py
 # -----------------------------
 from datetime import timedelta
+import logging
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, CoordinatorEntity
 from .const import DOMAIN, SCAN_INTERVAL_MINUTES
 from .api import VisaliaAPI
+
+_LOGGER = logging.getLogger(__name__)
 
 async def async_setup_entry(hass, entry, async_add_entities):
     username = entry.data["username"]
@@ -18,6 +21,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
 
     coordinator = DataUpdateCoordinator(
         hass,
+        _LOGGER,
         name="visalia_energy",
         update_method=async_update_data,
         update_interval=timedelta(minutes=SCAN_INTERVAL_MINUTES),
